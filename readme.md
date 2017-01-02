@@ -4,3 +4,6 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
 ## Challenges
 
 ### Day O1 - [Drum Kit](challenge1.html)
+#### Things I learned:
+  - kbd HTML Element -
+  - Data HTML Attribute
