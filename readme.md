@@ -14,5 +14,7 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
 
 ### Day O2 - [JS Clock](challenge2.html)
 #### Things I learned:
-  - Rotation
-  - Time
+  - rem VS em VS px VS vh -
+  - Rotation - transform's Rotate property takes a degree (60deg), length, or percentage and will by default rotate the element from it's center (transform-origin being set at default 50% 50%). to rotate by either end of this line, you change the origin to 100% for the right, or 0% for the left. you can also use top, left, right, bottom, and center [resource](https://css-tricks.com/almanac/properties/t/transform-origin/)
+  - Date object
+  - degrees

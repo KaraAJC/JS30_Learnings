@@ -1,0 +1,80 @@
+html {
+  background: url(https://unsplash.it/1500/1200?image=1051);
+  background-size: cover;
+  font-family: 'helvetica neue';
+  font-size: 10px;
+  text-align: center;
+}
+.clock-name {
+  display: block;
+  padding-left: 5rem;
+}
+
+h1 {
+  margin: 0 auto;
+  color: white;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 20px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px rgba(0,0,0,0.1),
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
+  border-radius: 40%;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.28, -0.55, 0, 1.54);
+}
+
+.movado {
+    border: 20px solid white;
+    border-radius: 390%;
+    width: 2px;
+    margin: 0 auto;
+}
+
+.second-hand {
+  border-color: #ff5722;
+}
+
+.min-hand {
+  border-color: #673ab7;
+}
+
+.hour-hand {
+  border-color: #7cb342;
+}
