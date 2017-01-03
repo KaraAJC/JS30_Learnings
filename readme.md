@@ -11,3 +11,8 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
   - Background CSS property - In the process of typing over the CSS from the challenge, I came upon the shorthand for setting the background's position and URL. Further reading gave me a better understanding of what I can set with the background property. I learned about the shorthand that lets you put any of the 8 properties into one line. I refactored background-size to be added to the line by  separating position from size with a forward-slash [reference](https://css-tricks.com/almanac/properties/b/background/)
   - Audio and Video JS Media Events - Because we're using the <audio> element, we can use various functions like .play(), or .pause() ! [reference](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events)
   - QuerySelector & QuerySelectorAll
+
+### Day O2 - [JS Clock](challenge2.html)
+#### Things I learned:
+  - Rotation
+  - Time
