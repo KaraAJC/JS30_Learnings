@@ -28,3 +28,5 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
   - nodeList data type
   - dataset object
 
+### Day O4 - [ARRAY DAY!](challenge4.html)
+#### Things I learned:
