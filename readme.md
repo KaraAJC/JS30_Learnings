@@ -30,3 +30,6 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
 
 ### Day O4 - [ARRAY DAY!](challenge4.html)
 #### Things I learned:
+  - console methods - When starting the video, i was shocked to learn that there was such a method called console.table! After reading more, I learned there are quite a bit methods you can call to the Console! my faves so far (after .log and .table) are .info, .group, .time and .warn! [reference](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+  - Map,Filter, Reduce, Sort AGAIN - just as the guy mentions, these are fundamental functions to have a good handle on, and this has been great practice from most of my knowledge living in ruby-land.
+  -
