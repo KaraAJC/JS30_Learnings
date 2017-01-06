@@ -33,3 +33,10 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
   - console methods - When starting the video, i was shocked to learn that there was such a method called console.table! After reading more, I learned there are quite a bit methods you can call to the Console! my faves so far (after .log and .table) are .info, .group, .time and .warn! [reference](https://developer.mozilla.org/en-US/docs/Web/API/Console)
   - Map,Filter, Reduce, Sort AGAIN - just as the guy mentions, these are fundamental functions to have a good handle on, and this has been great practice from most of my knowledge living in ruby-land.
   -
+
+### Day O5 - [Flex Panel Poetry](challenge5.html)
+#### Things I learned:
+  - this challenge was all about FLEXBOX and man, as much fun as i've had trying to learn it with all of these cool interactive things like [Flexbox Froggy](http://flexboxfroggy.com/) and [LearnCSSLayout](http://learnlayout.com/flexbox.html) its still a bit mysterious.. this challenge did help some.. I learned about display:flex being set on the parent element and the children are what you are positioning with align-items, or justify-content, or flex-direction.
+  - I got more familiar with the transition and transform properties, and more ways its used for animations.
+  CSS STUFF!
+  - I havent used a lot of CSS where you're using a wildcard operator, or > or :nth-child so that was cool to be exposed to!
