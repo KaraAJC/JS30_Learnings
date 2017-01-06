@@ -132,17 +132,45 @@
     console.log(karasMapTest);
 
     console.groupEnd();
+
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    // const category = document.querySelector('.mw-category');
 
+    // const links = Array.from(category.querySelector.all('a'));
+
+    // const de = links
+    //   .map(link => link.textContent)
+    //   .filter(streetName => streetName.includes('De'));
 
     // 7. sort Exercise
+    console.group("People Sort Example");
+    console.info("This challenge uses the people array and sorts them by last name")
     // Sort the people alphabetically by last name
 
+    const peopleSorted = people.sort((a,b) => {
+      const [aLast, aFirst] = a.split(', ');
+      const [bLast, bFirst] = b.split(', ');
+      return aLast > bLast ? 1: -1;
+      });
+
+    console.log(peopleSorted);
+    console.groupEnd();
+
     // 8. Reduce Exercise
+    console.group("Cool Reduce Example")
+    console.info("This last challenge asks to take a random array of transportation modes, and tally them up")
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-
+    const transportation = data.reduce((obj, item) => { //reduce takes a counter, and an element of the array
+      if (!obj[item]) { // if the counter object doesnt contain the item
+        obj[item] = 0; // make one and set it to zero
+      }
+      obj[item]++; // THEN, count the item up one.
+      return obj;
+    }, {}) // the default counter object initializes here
+    console.log(transportation);
+    console.groupEnd();
   </script>
 </body>
