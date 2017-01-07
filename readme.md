@@ -41,5 +41,8 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
   CSS STUFF!
   - I havent used a lot of CSS where you're using a wildcard operator, or > or :nth-child so that was cool to be exposed to!
 
-### Day O6 - [](challenge6.html)
+### Day O6 - [TypeAhead](challenge6.html)
 #### Things I learned:
+- fetch (browser api)
+- array spread
+- RegExp objects 'gi'
