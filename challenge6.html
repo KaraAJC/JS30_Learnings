@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <title>Type Ahead </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="06-type-ahead/style.css">
   </head>
   <body>
-    <form class="SearchForm">
-      <input type="text" class="Search" placeholder="City or State">
+    <form class="search-form">
+      <input type="text" class="search" placeholder="City or State">
       <ul class="suggestions">
         <li>Filter for a city</li>
         <li>or a state</li>
@@ -14,7 +14,55 @@
     </form>
 
     <script>
-    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+      const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';// this is the json cities endpoint file
+
+    // STEP ONE: initialize an empty array for cities to live
+      const cities = [];
+
+    //STEP TWO: FETCH the data from the endpoint, extract the JSON data, and put it into the cities array
+      fetch(endpoint) //fetch is a browser method to run a request and you recieve a promise along with a data blob
+        .then(prom => prom.json()) // we take the promise and convert to json readable
+        .then(data => cities.push(...data)); // then we use the spread function to push the nested data into cities array
+
+      console.log(cities);
+
+    // STEP THREE: Create a function to filter the array based on the input from the user
+      function findMatches(wordToMatch, cities) {
+        return cities.filter(place => {
+          const regex = new RegExp(wordToMatch, 'gi');
+
+          return place.city.match(regex) || place.state.match(regex);
+        });
+      }
+
+    // STEP FOUR: Create a function to display the filtered list to the user
+      function displayMatches() {
+        //4.1 call findMatches & save to array
+        const matchArray = findMatches(this.value, cities);
+
+        //4.2 construct the html element with data
+        const html = matchArray.map(place => {
+          return `
+            <li>
+              <span class="name">${place.city}, ${place.state}</span>
+              <span class="population">${place.population}</span>
+            </li>
+          `;
+        }).join('');
+
+        //4.3 fill suggestions inner html with constructed html
+        suggestions.innerHTML = html;
+      }
+
+    // STEP FIVE: Bind selectors for input and output data
+      const searchInput = document.querySelector('.search');
+      const suggestions = document.querySelector('.suggestions');
+
+    // STEP SIX: Create event listeners for change in input field
+      searchInput.addEventListener('change', displayMatches);
+      searchInput.addEventListener('keyup', displayMatches);
+
+
     </script>
   </body>
 </html>
