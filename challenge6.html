@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Type Ahead </title>
+    <title>💩-ulations!</title>
     <link rel="stylesheet" type="text/css" href="06-type-ahead/style.css">
   </head>
   <body>
+    <h1>US 💩-ulations!</h1>
+    <p>How many people are 💩-ing in a city near you?</p>
     <form class="search-form">
       <input type="text" class="search" placeholder="City or State">
       <ul class="suggestions">
@@ -35,6 +37,11 @@
         });
       }
 
+      // copied code to regex number for comma placement
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      }
+
     // STEP FOUR: Create a function to display the filtered list to the user
       function displayMatches() {
         //4.1 call findMatches & save to array
@@ -42,10 +49,16 @@
 
         //4.2 construct the html element with data
         const html = matchArray.map(place => {
+          //4.2.1 use regex to search within results to display highlights
+          const regex = new RegExp(this.value, 'gi');
+          //4.2.2 save variables with added 'hl'class
+          const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+          const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+          //4.2.3 add variables to return function instead of place.state
           return `
             <li>
-              <span class="name">${place.city}, ${place.state}</span>
-              <span class="population">${place.population}</span>
+              <span class="name">${cityName}, ${stateName}</span>
+              <span class="population">${numberWithCommas(place.population)}</span>
             </li>
           `;
         }).join('');

@@ -10,6 +10,17 @@ html {
   box-sizing: inherit;
 }
 
+h1{
+    font-size: 75px;
+}
+h1,p {
+  font-weight: lighter;
+  text-align: center;
+  color: white;
+  font-family: 'helvetica neue', sans-serif;
+  margin: 0 auto;
+}
+
 input {
   width: 100%;
   padding: 20px;
