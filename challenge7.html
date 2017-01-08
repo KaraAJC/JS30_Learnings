@@ -46,8 +46,9 @@
     //   return thisYear - person.year >= 19; // no need for if statement because evaluation will return boolean
     // });
      
+     
      // iteration Four: 
-    const any19 = people.some(person => ((new Date()).getFullYear()) >= 19); // uses implicit return and removes block
+    const any19 = people.some(person => ((new Date()).getFullYear()) - person.year >= 19); // uses implicit return and removes block
      
      // BONUS iteration!
     function ageCheck(people, age) {
@@ -58,9 +59,16 @@
 
     console.log("any folks in this group at least 21? " + ageCheck(people, 21)); 
     console.log("any folks in this group at least 50? " +ageCheck(people, 50));
-    console.groupEnd();
-    // Array.prototype.every() // is everyone 19 or older?
     
+    console.groupEnd();
+    
+    
+    // Array.prototype.every() // is everyone 19 or older?
+    console.group("Every Example");
+    // .some and .every are exactly the same!! some checks for at least one, every checks for all to be true
+    const all19 = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
+    console.log({all19})
+    console.groupEnd();
     
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
