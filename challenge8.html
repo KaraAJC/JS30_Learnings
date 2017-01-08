@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Outline" rel="stylesheet">
 </head>
 <body>
-<h1 style="`${hue}`">All I Want For My Birthday Is Cake &amp; Rainbows!</h1>
-<p>Make my dreams come true!</p>
+<h1>All I Want For My Birthday Is Cake &amp; Rainbows!</h1>
+  <h2> Kara's BDAY countdown:<span id="bday"></span> Days!</h2>
+<p>Make my dreams come true! Color to your heart's desire!</p>
 <canvas id="draw" width="800" height="800"></canvas>
+  
 <script>
+ const kcTime = new Date("01/31/1983");
+ const currentTime = new Date;
+ const bday =  kcTime.getDate() - currentTime.getDate();
 // Step One: bind the canvas to a selector
 const canvas = document.querySelector('#draw');
 // Step Two: Get the context in 2d to draw on
@@ -60,19 +66,19 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
 <style>
   html, body {
     margin:0;
+    font-size: 30px;
   }
   canvas#draw {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
     background-size: cover;
   }
   h1{
-    font-size: 75px;
+    font-size: 90px;
   }
   h1,p {
     font-weight: lighter;
     text-align: center;
-    color: #BADASS;
-    font-family: 'helvetica neue', sans-serif;
+    font-family: 'Bungee Outline';
     margin: 0 auto;
   }
 </style>
