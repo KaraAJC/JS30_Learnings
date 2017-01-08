@@ -30,11 +30,12 @@ function draw(e) {
   if (!isDrawing) return;
   console.log(e);
   //creating linepath with context Object
-  ctx.beginPath();//
-  ctx.moveTo(lastX, lastY);//
-  ctx.lineTo(e.offsetX, e.offsetY);//
-  ctx.stroke();//
-  
+  context.beginPath();// starts a path
+  context.moveTo(lastX, lastY);// start from these coords
+  context.lineTo(e.offsetX, e.offsetY);// create line to these coords
+  context.stroke();//make stroke
+  lastX = e.offsetX;
+  lastY = e.offsetY;
 }
 
 // Step Seven: Create event listener on canvas for mousemove to trigger the draw function
