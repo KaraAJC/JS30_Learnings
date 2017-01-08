@@ -25,10 +25,13 @@ let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 
-// Step Six: CReate a draw function to take an event, toggle 'isDrawing' on keydown and record movement till the last X&Y on keyup.
+// Step Six: Create a draw function to take an event, toggle 'isDrawing' on keydown and record movement till the last X&Y on keyup.
 function draw(e) {
   console.log(e);
 }
+
+// Step Seven: Create event listener on canvas for mousemove to trigger the draw function
+canvas.addEventListener('mousemove', draw);
 </script>
 
 <style>
