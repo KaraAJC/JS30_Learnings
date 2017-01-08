@@ -5,15 +5,46 @@
   <title>Array Cardio 💪💪</title>
 </head>
 <body>
-  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+<style>
+  body {
+    text-align: center;
+    background: #540452;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 45px;
+  }
+  a {
+    color:#936eb5;
+  }
+  a:hover {
+    color: #BADA55;
+  }
+  span {
+    color: #BADA55;
+  }
+  img {
+    width: 50%;
+  }
+</style>
+
+  <h1>Array Cardio DEUX!</h1>
+  <img src="https://novacatclinic.com/wp-content/uploads/2014/07/382570_1266675080152_full1.jpg">
+  <p><em>PSST... <br>Check out my work on this challenge <br>by opening the Console in your browser!</p>
+  <p> You can go to it by typing </em><br><code> CMD + OPTION + J </code></em> <br>See you there! 💁</em></p>
+
   <script>
     // ## Array Cardio Day 2
+    console.info("Today we look at for ways to evaluate data sets with .some, .every, .find, and .findIndex");
+    console.log("Here's the first data set");
     const people = [
       { name: 'Wes', year: 1988 },
       { name: 'Kait', year: 1986 },
       { name: 'Irv', year: 1970 },
       { name: 'Lux', year: 2015 }
     ];
+    console.table(people)
+    
     const comments = [
       { text: 'Love this!', id: 523423 },
       { text: 'Super good', id: 823423 },
@@ -70,11 +101,16 @@
     console.log({all19})
     console.groupEnd();
     
+    console.log("Here's the second data set:");
+    console.table(comments);
+    
     // Array.prototype.find()
+    console.group("Find example")
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
     
     
+    console.groupEnd();
     // Array.prototype.findIndex()
     // Find the comment with this ID
     
