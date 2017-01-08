@@ -15,9 +15,10 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 // Step Four: Configure the settings for drawing: line join, line cap, and Stroke Style
-context.strokeStyle = '#BADA55'
-context.lineJoin = 'round'
-context.lineCap = 'round'
+context.strokeStyle = '#BADA55';
+context.lineJoin = 'round';
+context.lineCap = 'round';
+context.lineWidth = 75;
 
 //Step Five: Create variables to track when a person is drawing, and where they left their keystroke at last
 
@@ -42,7 +43,10 @@ function draw(e) {
 canvas.addEventListener('mousemove', draw);
 
 // Step Eight: Create event listeners to toggle isDrawing based on mouse down/up and OUT(if you let your mouse leave the canvas windown while down it will keep assuming mousedown on return
-canvas.addEventListener('mousedown', () => isDrawing = true);
+canvas.addEventListener('mousedown', (e) => { // create as block to do two steps, so drawing allows for line to break
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY]; // ES6 way to set variables at same time
+});
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
 </script>
