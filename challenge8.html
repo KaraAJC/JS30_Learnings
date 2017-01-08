@@ -27,11 +27,16 @@ let lastY = 0;
 
 // Step Six: Create a draw function to take an event, toggle 'isDrawing' on keydown and record movement till the last X&Y on keyup.
 function draw(e) {
+  if (!isDrawing) return;
   console.log(e);
 }
 
 // Step Seven: Create event listener on canvas for mousemove to trigger the draw function
 canvas.addEventListener('mousemove', draw);
+
+// Step Eight: Create event listeners to toggle isDrawing based on mouse down/up
+canvas.addEventListener('mousedown', () => isDrawing = true);
+canvas.addEventListener('mouseup', () => isDrawing = false);
 </script>
 
 <style>
