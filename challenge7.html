@@ -96,6 +96,7 @@
     
     // Array.prototype.every() // is everyone 19 or older?
     console.group("Every Example");
+    console.info("Check the people, EVERY person 19 or older?");
     // .some and .every are exactly the same!! some checks for at least one, every checks for all to be true
     const all19 = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
     console.log({all19})
@@ -106,6 +107,7 @@
     
 // Array.prototype.find()
     console.group("Find Example")
+    console.info("Check the comments, find the comment with id 823423");
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
     // iteration one
