@@ -125,9 +125,15 @@
     console.groupEnd();
     // Array.prototype.findIndex()
     // Find the comment with this ID
-    
+    console.group("Find Index & Delete Example")
+    console.info("Find the index of comment with id 823423 and delete it")
+      const commentNum = comments.findIndex(comment => comment.id === 823423);
+      console.log({commentNum})
     
     // delete the comment with the ID of 823423
+    // Use Splice
+    // Or slice & spread
+  console.groupEnd();
   </script>
 </body>
 </html>
