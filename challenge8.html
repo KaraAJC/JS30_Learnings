@@ -5,6 +5,8 @@
   <title>HTML5 Canvas</title>
 </head>
 <body>
+<h1 style="`${hue}`">All I Want For My Birthday Is Cake &amp; Rainbows!</h1>
+<p>Make my dreams come true!</p>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
 // Step One: bind the canvas to a selector
@@ -62,6 +64,16 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
   canvas#draw {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
     background-size: cover;
+  }
+  h1{
+    font-size: 75px;
+  }
+  h1,p {
+    font-weight: lighter;
+    text-align: center;
+    color: #BADASS;
+    font-family: 'helvetica neue', sans-serif;
+    margin: 0 auto;
   }
 </style>
 
