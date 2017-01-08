@@ -7,6 +7,28 @@
 <body>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
+// Step One: bind the canvas to a selector
+const canvas = document.querySelector('#draw');
+// Step Two: Get the context in 2d to draw on
+const context = canvas.getContext('2d');
+// Step Three: Set canvas width and height to match the window
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+// Step Four: Configure the settings for drawing: line join, line cap, and Stroke Style
+context.strokeStyle = '#BADA55'
+context.lineJoin = 'round'
+context.lineCap = 'round'
+
+//Step Five: Create variables to track when a person is drawing, and where they left their keystroke at last
+
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+
+// Step Six: CReate a draw function to take an event, toggle 'isDrawing' on keydown and record movement till the last X&Y on keyup.
+function draw(e) {
+  console.log(e);
+}
 </script>
 
 <style>
