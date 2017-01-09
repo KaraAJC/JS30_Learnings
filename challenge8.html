@@ -56,7 +56,7 @@ function draw(e) {
   lastY = e.offsetY;
   hue++;
 }
-console.info(`the hue is at: ${hue} right now`)
+console.info(`the hue is at: ${hue} right now`);
 // Step Seven: Create event listener on canvas for mousemove to trigger the draw function
 canvas.addEventListener('mousemove', draw);
 
@@ -81,7 +81,8 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
   canvas#draw {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
     background-size: contain;
-    background-position: center;
+    background-position: center bottom;
+    background-position-y: 4em;
   }
   h1{
     font-size: 70px;
