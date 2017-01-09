@@ -45,9 +45,10 @@ function draw(e) {
   context.stroke();//make stroke
   lastX = e.offsetX;
   lastY = e.offsetY;
+  headerText.style.color = `hsl(${hue}, 100%, 50%)`;
   hue++;
 }
-
+console.log(`the hue is at: ${hue} right now`)
 // Step Seven: Create event listener on canvas for mousemove to trigger the draw function
 canvas.addEventListener('mousemove', draw);
 
@@ -65,6 +66,7 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
  const bDay = document.querySelector('#bday');
   bDay.innerHTML = kcCountDown;
   bDay.style.color = `hsl(${hue}, 100%, 50%)`;
+const headerText = document.querySelector('.h1');
 </script>
 
 <style>
@@ -76,6 +78,9 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
   canvas#draw {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
     background-size: cover;
+  }
+  img {
+    clip: rect(80px,600px,668px,0px);
   }
   h1{
     font-size: 70px;
