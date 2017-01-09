@@ -12,6 +12,15 @@
 <canvas id="draw" width="800" height="800"></canvas>
   
 <script>  
+  
+    //   BIRTHDAY STUFF
+ const kcTime = new Date("01/31/1983");
+ const currentTime = new Date;
+ const kcCountDown =  kcTime.getDate() - currentTime.getDate();
+ const bDay = document.querySelector('#bday');
+ bDay.innerHTML = kcCountDown;
+const headerText = document.querySelector('.h1');
+  
 // Step One: bind the canvas to a selector
 const canvas = document.querySelector('#draw');
 // Step Two: Get the context in 2d to draw on
@@ -56,17 +65,12 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', (e) => { // create as block to do two steps, so drawing allows for line to break
   isDrawing = true;
   [lastX, lastY] = [e.offsetX, e.offsetY]; // ES6 way to set variables at same time
+   bDay.style.color = `hsl(${hue}, 100%, 50%)`;
+  
 });
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false); 
-  //   BIRTHDAY STUFF
- const kcTime = new Date("01/31/1983");
- const currentTime = new Date;
- const kcCountDown =  kcTime.getDate() - currentTime.getDate();
- const bDay = document.querySelector('#bday');
-  bDay.innerHTML = kcCountDown;
-  bDay.style.color = `hsl(${hue}, 100%, 50%)`;
-const headerText = document.querySelector('.h1');
+
 </script>
 
 <style>
