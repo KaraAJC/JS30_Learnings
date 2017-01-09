@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>All I Want For My Birthday Is <span class="rainbows">Cake &amp; Rainbows!</span></h1>
-  <h2> Kara's B-Day countdown: <span id="bday" class="rainbows"></span> Days!</h2>
+  <h2> Kara's B-Day countdown: <span id="bday"></span> Days!</h2>
 <p>Make my dreams come true! Color to your heart's desire!</p>
 <canvas id="draw" width="800" height="800"></canvas>
   
@@ -32,7 +32,7 @@ canvas.height = window.innerHeight;
 context.strokeStyle = '#BADA55';
 context.lineJoin = 'round';
 context.lineCap = 'round';
-context.lineWidth = 35;
+context.lineWidth = 15;
 
 //Step Five: Create variables to track when a person is drawing, and where they left their keystroke at last
 
@@ -65,6 +65,7 @@ canvas.addEventListener('mousedown', (e) => { // create as block to do two steps
   isDrawing = true;
   [lastX, lastY] = [e.offsetX, e.offsetY]; // ES6 way to set variables at same time
   rainbowText.style.color = `hsl(${hue}, 100%, 50%)`;
+  bDay.style.color = `hsl(${hue}, 100%, 50%)`;
 });
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false); 
