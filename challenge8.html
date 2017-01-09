@@ -6,8 +6,8 @@
   <link href="https://fonts.googleapis.com/css?family=Bungee+Outline" rel="stylesheet">
 </head>
 <body>
-<h1>All I Want For My Birthday Is Cake &amp; Rainbows!</h1>
-  <h2> Kara's B-Day countdown: <span id="bday"></span> Days!</h2>
+  <h1>All I Want For My Birthday Is <span class="rainbows">Cake &amp; Rainbows!</span></h1>
+  <h2> Kara's B-Day countdown: <span id="bday" class="rainbows"></span> Days!</h2>
 <p>Make my dreams come true! Color to your heart's desire!</p>
 <canvas id="draw" width="800" height="800"></canvas>
   
@@ -19,7 +19,7 @@ const currentTime = new Date;
 const kcCountDown =  kcTime.getDate() - currentTime.getDate();
 const bDay = document.querySelector('#bday');
 bDay.innerHTML = kcCountDown;
-const headerText = document.querySelector('.h1');
+const rainbowText = document.querySelector('.rainbows');
   
 // Step One: bind the canvas to a selector
 const canvas = document.querySelector('#draw');
@@ -56,7 +56,7 @@ function draw(e) {
   lastY = e.offsetY;
   hue++;
 }
-console.log(`the hue is at: ${hue} right now`)
+console.info(`the hue is at: ${hue} right now`)
 // Step Seven: Create event listener on canvas for mousemove to trigger the draw function
 canvas.addEventListener('mousemove', draw);
 
@@ -64,8 +64,7 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', (e) => { // create as block to do two steps, so drawing allows for line to break
   isDrawing = true;
   [lastX, lastY] = [e.offsetX, e.offsetY]; // ES6 way to set variables at same time
-   bDay.style.color = `hsl(${hue}, 100%, 50%)`;
-   headerText.style.color = `hsl(${hue}, 100%, 50%)`;
+  rainbowText.style.color = `hsl(${hue}, 100%, 50%)`;
 });
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false); 
