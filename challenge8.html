@@ -7,14 +7,11 @@
 </head>
 <body>
 <h1>All I Want For My Birthday Is Cake &amp; Rainbows!</h1>
-  <h2> Kara's BDAY countdown:<span id="bday"></span> Days!</h2>
+  <h2> Kara's B-Day countdown: <span id="bday"></span> Days!</h2>
 <p>Make my dreams come true! Color to your heart's desire!</p>
 <canvas id="draw" width="800" height="800"></canvas>
   
-<script>
- const kcTime = new Date("01/31/1983");
- const currentTime = new Date;
- const bday =  kcTime.getDate() - currentTime.getDate();
+<script>  
 // Step One: bind the canvas to a selector
 const canvas = document.querySelector('#draw');
 // Step Two: Get the context in 2d to draw on
@@ -60,25 +57,33 @@ canvas.addEventListener('mousedown', (e) => { // create as block to do two steps
   [lastX, lastY] = [e.offsetX, e.offsetY]; // ES6 way to set variables at same time
 });
 canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false); 
+  //   BIRTHDAY STUFF
+ const kcTime = new Date("01/31/1983");
+ const currentTime = new Date;
+ const kcCountDown =  kcTime.getDate() - currentTime.getDate();
+ const bDay = document.querySelector('#bday');
+  bDay.innerHTML = kcCountdown;
+  bDay.style.color = `hsl(${hue}, 100%, 50%)`;
 </script>
 
 <style>
   html, body {
     margin:0;
     font-size: 30px;
+    text-align: center;
   }
   canvas#draw {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
     background-size: cover;
   }
   h1{
-    font-size: 90px;
-  }
-  h1,p {
-    font-weight: lighter;
-    text-align: center;
+    font-size: 70px;
     font-family: 'Bungee Outline';
+  }
+  h2,p {
+    font-weight: lighter;
+    font-family: 'helvetica neue';
     margin: 0 auto;
   }
 </style>
