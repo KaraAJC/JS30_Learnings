@@ -14,11 +14,11 @@
 <script>  
   
     //   BIRTHDAY STUFF
- const kcTime = new Date("01/31/1983");
- const currentTime = new Date;
- const kcCountDown =  kcTime.getDate() - currentTime.getDate();
- const bDay = document.querySelector('#bday');
- bDay.innerHTML = kcCountDown;
+const kcTime = new Date("01/31/1983");
+const currentTime = new Date;
+const kcCountDown =  kcTime.getDate() - currentTime.getDate();
+const bDay = document.querySelector('#bday');
+bDay.innerHTML = kcCountDown;
 const headerText = document.querySelector('.h1');
   
 // Step One: bind the canvas to a selector
@@ -54,7 +54,6 @@ function draw(e) {
   context.stroke();//make stroke
   lastX = e.offsetX;
   lastY = e.offsetY;
-  headerText.style.color = `hsl(${hue}, 100%, 50%)`;
   hue++;
 }
 console.log(`the hue is at: ${hue} right now`)
@@ -66,7 +65,7 @@ canvas.addEventListener('mousedown', (e) => { // create as block to do two steps
   isDrawing = true;
   [lastX, lastY] = [e.offsetX, e.offsetY]; // ES6 way to set variables at same time
    bDay.style.color = `hsl(${hue}, 100%, 50%)`;
-  
+   headerText.style.color = `hsl(${hue}, 100%, 50%)`;
 });
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false); 
@@ -82,7 +81,6 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
   canvas#draw {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
     background-size: contain;
-    background-repeat: no-repeat;
     background-position: center;
   }
   h1{
