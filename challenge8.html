@@ -81,14 +81,14 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
   }
   canvas#draw {
     background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
-    background-size: cover;
-  }
-  img {
-    clip: rect(80px,600px,668px,0px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   h1{
     font-size: 70px;
     font-family: 'Bungee Outline';
+    margin: 0px 50px;
   }
   h2,p {
     font-weight: lighter;
