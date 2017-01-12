@@ -43,6 +43,6 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
 
 ### Day O6 - [TypeAhead](challenge6.html)
 #### Things I learned:
-- fetch (browser api)
+- fetch (browser api)[resource](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - array spread
 - RegExp objects 'gi'
