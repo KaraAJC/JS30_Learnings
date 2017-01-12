@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪💪</title>
+</head>
+<body>
+<style>
+  body {
+    text-align: center;
+    background: #540452;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 45px;
+  }
+  a {
+    color:#936eb5;
+  }
+  a:hover {
+    color: #BADA55;
+  }
+  span {
+    color: #BADA55;
+  }
+  img {
+    width: 50%;
+  }
+</style>
+
+  <h1>Array Cardio DEUX!</h1>
+  <img src="https://novacatclinic.com/wp-content/uploads/2014/07/382570_1266675080152_full1.jpg">
+  <p><em>PSST... <br>Check out my work on this challenge <br>by opening the Console in your browser!</p>
+  <p> You can go to it by typing </em><br><code> CMD + OPTION + J </code></em> <br>See you there! 💁</em></p>
+
+  <script>
+    // ## Array Cardio Day 2
+    console.info("Today we look at for ways to evaluate data sets with .some, .every, .find, and .findIndex");
+    console.log("Here's the first data set");
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+    console.table(people)
+    
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+    // Some and Every Checks
+    // Array.prototype.some() // is at least one person 19 or older?
+    console.group("Some Example");
+    console.info("Check the people, is at least one person 19 or older?");
+        // iteration one:
+    // const any19 = people.some(function(person) {
+    //   if (2017 - person.year >= 19) {
+    //     return true;
+    //   }
+    // });
+    
+    // iteration two:
+    // const any19 = people.some(function(person) {
+    //   const thisYear = (new Date()).getFullYear(); <-- adds more dynamic year definition
+    //   if (thisYear - person.year >= 19 ) {
+    //     return true;
+    //   }
+    // });
+    
+    // iteration Three:
+    // const any19 = people.some(person => { //es6 writing using arrow function
+    //   const thisYear = (new Date()).getFullYear();
+    //   return thisYear - person.year >= 19; // no need for if statement because evaluation will return boolean
+    // });
+     
+     
+     // iteration Four: 
+    const any19 = people.some(person => ((new Date()).getFullYear()) - person.year >= 19); // uses implicit return and removes block
+     
+     // BONUS iteration!
+    function ageCheck(people, age) {
+      return people.some(person => ((new Date()).getFullYear() - person.year) >= age);
+    }
+    
+    console.log({any19})//curly braces allow for the resulting object to be shown
+
+    console.log("any folks in this group at least 21? " + ageCheck(people, 21)); 
+    console.log("any folks in this group at least 50? " +ageCheck(people, 50));
+    
+    console.groupEnd();
+    
+    
+    // Array.prototype.every() // is everyone 19 or older?
+    console.group("Every Example");
+    console.info("Check the people, EVERY person 19 or older?");
+    // .some and .every are exactly the same!! some checks for at least one, every checks for all to be true
+    const all19 = people.every(person => ((new Date()).getFullYear()) - person.year >= 19);
+    console.log({all19})
+    console.groupEnd();
+    
+    console.log("Here's the second data set:");
+    console.table(comments);
+    
+// Array.prototype.find()
+    console.group("Find Example")
+    console.info("Check the comments, find the comment with id 823423");
+    // Find is like filter, but instead returns just the one you are looking for
+    // find the comment with the ID of 823423
+    // iteration one
+      // const comment = comments.find(function(comment) {
+      //   if(comment.id === 823423) {
+      //     return comment;
+      //   }
+      // })
+      
+    //iteration two
+      const comment = comments.find(comment => comment.id === 823423);
+      
+      console.log({comment});
+    
+    console.groupEnd();
+    // Array.prototype.findIndex()
+    // Find the comment with this ID
+    console.group("Find Index & Delete Example")
+    console.info("Find the index of comment with id 823423 and delete it")
+      const commentNum = comments.findIndex(comment => comment.id === 823423);
+      console.log({commentNum})
+    
+    // delete the comment with the ID of 823423
+    // Use Splice
+    // Or slice & spread
+  console.groupEnd();
+  </script>
+</body>
+</html>

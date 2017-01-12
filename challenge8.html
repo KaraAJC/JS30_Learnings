@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Outline" rel="stylesheet">
+</head>
+<body>
+  <h1>All I Want For My Birthday Is <span class="rainbows">Cake &amp; Rainbows!</span></h1>
+  <h2> Kara's B-Day countdown: <span id="bday"></span> Days!</h2>
+<p>Make my dreams come true! Color to your heart's desire!</p>
+<canvas id="draw" width="800" height="800"></canvas>
+  
+<script>  
+  
+    //   BIRTHDAY STUFF
+const kcTime = new Date("01/31/1983");
+const currentTime = new Date;
+const kcCountDown =  kcTime.getDate() - currentTime.getDate();
+const bDay = document.querySelector('#bday');
+bDay.innerHTML = kcCountDown;
+const rainbowText = document.querySelector('.rainbows');
+  
+// Step One: bind the canvas to a selector
+const canvas = document.querySelector('#draw');
+// Step Two: Get the context in 2d to draw on
+const context = canvas.getContext('2d');
+// Step Three: Set canvas width and height to match the window
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+// Step Four: Configure the settings for drawing: line join, line cap, and Stroke Style
+context.strokeStyle = '#BADA55';
+context.lineJoin = 'round';
+context.lineCap = 'round';
+context.lineWidth = 15;
+
+//Step Five: Create variables to track when a person is drawing, and where they left their keystroke at last
+
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+let hue = 0;
+let direction = true;
+
+// Step Six: Create a draw function to take an event, toggle 'isDrawing' on keydown and record movement till the last X&Y on keyup.
+function draw(e) {
+  if (!isDrawing) return;
+  console.log(e);
+  //creating linepath with context Object
+  context.strokeStyle = `hsl(${hue}, 100%, 50%)`;// RAINBOWWW!!
+  context.beginPath();// starts a path
+  context.moveTo(lastX, lastY);// start from these coords
+  context.lineTo(e.offsetX, e.offsetY);// create line to these coords
+  context.stroke();//make stroke
+  lastX = e.offsetX;
+  lastY = e.offsetY;
+  hue++;
+}
+console.info(`the hue is at: ${hue} right now`);
+// Step Seven: Create event listener on canvas for mousemove to trigger the draw function
+canvas.addEventListener('mousemove', draw);
+
+// Step Eight: Create event listeners to toggle isDrawing based on mouse down/up and OUT(if you let your mouse leave the canvas windown while down it will keep assuming mousedown on return
+canvas.addEventListener('mousedown', (e) => { // create as block to do two steps, so drawing allows for line to break
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY]; // ES6 way to set variables at same time
+  rainbowText.style.color = `hsl(${hue}, 100%, 50%)`;
+  bDay.style.color = `hsl(${hue}, 100%, 50%)`;
+});
+canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mouseout', () => isDrawing = false); 
+
+</script>
+
+<style>
+  html, body {
+    margin:0;
+    font-size: 30px;
+    text-align: center;
+  }
+  canvas#draw {
+    border-top: 20px dotted;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Draw_this_birthday_cake.svg/2000px-Draw_this_birthday_cake.svg.png');
+    background-size: contain;
+    background-position: center bottom;
+    background-position-y: 4em;
+  }
+  h1{
+    font-size: 70px;
+    font-family: 'Bungee Outline';
+    margin: 0px 50px;
+  }
+  h2,p {
+    font-weight: lighter;
+    font-family: 'helvetica neue';
+    margin: 0 auto;
+  }
+</style>
+
+</body>
+</html>
