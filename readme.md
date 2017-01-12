@@ -54,3 +54,18 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
 
 ### Day O8 - [Rainbow Canvas](challenge8.html)
 #### Things I learned:
+- HSL
+- Canvas object
+
+### Day O9 - [14 console tricks](challenge9.html)
+#### Things I learned:
+Luckily, I used quite a bit of these console tricks after learning about the console API on Day 4. Still, I as able to learn about using debugger options in Chrome Dev Tools that I hadn't used before.
+-
+
+### Day 10 - [shift + check 'em](challenge10.html)
+#### Things I learned:
+For this challenge, I tried to write out the steps and complete the challenge without watching the solution.
+THEN, i watched the solution, and it was different than mine. but I'd like to figure mine out! Stay Tuned!
+
+### Day 11 - [HTML Video](challenge11.html)
+#### Things I learned:
