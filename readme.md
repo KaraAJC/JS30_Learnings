@@ -69,4 +69,20 @@ THEN, i watched the solution, and it was different than mine. but I'd like to fi
 
 ### Day 11 - [HTML Video](challenge11.html)
 #### Things I learned:
+I'm becoming more used to the flow of working on Javascript in that the main steps are to create selectors, build a function for the action I want to happen on the selector, then connect the two with an event listener. What I'm learning to grow with is knowing which element is best for being selected, and what properties are available to me based on the event and element selected that I can use for the action I want to make happen.
 - video html element
+- timeUpdate event
+-
+
+### Day 12 - [Konami Code](challenge12.html)
+#### Things I learned:
+- *cornify!* I let myself go down a mini rabbit hole, to find hoffify and sharkify, and I am determined to make my own kara-fy! for my bitmoji avatar.
+
+### Day 13 - [Scroll](challenge13.html)
+#### Things I learned:
+I finally got fed-up with the number of event listeners that were being used that I had no idea about, so I went out to find a [full list](https://developer.mozilla.org/en-US/docs/Web/Events) of all the things you can listen for. In this challenge, we're listening for a scroll event.
+- When you use scroll events, its important to use a debounce function.
+window.scrollY tells you how far you've scrolled down the page in pixels, and according to it's [resource page](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY), it's better to use window.pageYOffset for cross-browser compatibility.
+- *Weird Discovery* when your browser is zoomed in or out, it modifies the window.scrollY to a float value (I was getting this problem when testing my code since my window is so small, I zoomed out the browser and kept getting float values, so [i googled it](https://github.com/dominikh/go-js-dom/issues/19))
+- OffsetTop
+- InnerHeight
