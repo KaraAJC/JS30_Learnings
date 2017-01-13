@@ -69,3 +69,4 @@ THEN, i watched the solution, and it was different than mine. but I'd like to fi
 
 ### Day 11 - [HTML Video](challenge11.html)
 #### Things I learned:
+- video html element
