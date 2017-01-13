@@ -6,6 +6,7 @@ const progressBar = player.querySelector('.progress__filled');
 const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
 
+
 // write functions for play toggle, volume, speed, and skip
 
 function togglePlay () {
