@@ -86,3 +86,14 @@ window.scrollY tells you how far you've scrolled down the page in pixels, and ac
 - *Weird Discovery* when your browser is zoomed in or out, it modifies the window.scrollY to a float value (I was getting this problem when testing my code since my window is so small, I zoomed out the browser and kept getting float values, so [i googled it](https://github.com/dominikh/go-js-dom/issues/19))
 - OffsetTop
 - InnerHeight
+
+### Day 14 - [Value Vs Reference copies](challenge14.html)
+#### Things I learned:
+This challenge was short, and left me feeling like i needed to know the answer to WHY. Luckily I found a really great explanation of [primitive values vs reference values](https://stackoverflow.com/questions/13266616/primitive-value-vs-reference-value/13268731#13268731) like sticky notes.
+
+
+### Day 15 - [Local Storage & Event Delegation](challenge15.html)
+#### Things I learned:
+- [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API) setItem, getItem, removeItem
+- .reset()
+- eventDelegation - Responsible Parents, irresponsible children.
