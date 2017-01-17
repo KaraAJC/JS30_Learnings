@@ -97,3 +97,9 @@ This challenge was short, and left me feeling like i needed to know the answer t
 - [Local Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API) setItem, getItem, removeItem
 - .reset()
 - eventDelegation - Responsible Parents, irresponsible children.
+
+### Day 16 - [Mouse Shadow](challenge16.html)
+#### Things I learned:
+This was a fun challenge, though i'm still grasping the things you can do with x/y coordinates, I was happy to get to know more about setting a listener for mousemove.
+[contenteditable HTML Attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable) - Used so you could click on the text and edit it on the page.
+I also learned about textShadow Style settings, and an es6 shortcut to setting variables. I want to do more with this challenge, like adding in a way to put in emojis or choose random shadow colors..

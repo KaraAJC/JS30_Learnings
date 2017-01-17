@@ -9,10 +9,11 @@
     html {
       color: black;
       font-family: sans-serif;
+      text-align: center;
     }
 
     .hero {
-      min-height: 100vh;
+      min-height: 75vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,13 +24,50 @@
       text-shadow: 10px 10px 0 rgba(0,0,0,1);
       font-size: 100px;
     }
-  </style>
 
+    h2 {
+      font-size: 50px;
+      margin: 0 auto;
+      font-weight: 200;
+    }
+  </style>
   <div class="hero">
-    <h1 contenteditable>🔥WOAH!</h1>
+    <h1 contenteditable>🔥I am...</h1>
   </div>
+  <div><h2>Write an affirmation above!</h2></div>
 
 <script>
+
+const hero = document.querySelector('.hero');
+const text = hero.querySelector('h1');
+const walk = 100; // how far should the shadow stretch
+
+function shadowMove(e) {
+  // console.log(e);
+  //es6 syntax equivalent const w = hero.offsetWidth
+  const { offsetWidth:width, offsetHeight:height } = hero;
+  let { offsetX:x, offsetY:y } = e;
+
+  // console.log(x,y); notice from console.log that the x and y reset to 0,0 when mousemoving over the h1, child of the hero, so we have to compensate:
+  if(this !== e.target) {
+    x = x + e.target.offsetLeft;
+    y = y + e.target.offsetTop;
+  }
+
+  const xWalk = Math.round((x / width * walk) - (walk / 2)); //if 100 is walk, 50 is highest, -50 is lowest
+  const yWalk = Math.round((y / height * walk) - (walk / 2));
+
+  // text.style.textShadow = `H10px W10px Blur0 Colorred;
+  text.style.textShadow = `
+    ${xWalk}px ${yWalk}px 0 rgba(50,255,100,0.7),
+    ${xWalk * -2}px ${yWalk}px 0 rgba(255,50,255,0.7),
+    ${yWalk}px ${xWalk * -1}px 0 rgba(255,175,0,0.7),
+    ${yWalk * -2}px ${xWalk * -1}px 0 rgba(50,0,255,0.7)
+    `;
+
+}
+
+hero.addEventListener('mousemove', shadowMove)
 </script>
 
 </body>
