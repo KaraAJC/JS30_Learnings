@@ -41,6 +41,7 @@
 const hero = document.querySelector('.hero');
 const text = hero.querySelector('h1');
 const walk = 100; // how far should the shadow stretch
+let clicked = false;
 
 function shadowMove(e) {
   // console.log(e);
@@ -65,8 +66,23 @@ function shadowMove(e) {
     ${yWalk * -2}px ${xWalk * -1}px 0 rgba(50,0,255,0.7)
     `;
 
+};
+
+function toggleMouse(e) {
+  clicked = !clicked
+  console.count(e);
+  e.preventDefault();
+  console.log(e);
+  if(clicked) {
+    console.log("clicked ON");
+    this.removeEventListener('mousemove', shadowMove)
+  } else {
+    console.log("clicked OFF");
+    this.addEventListener('mousemove', shadowMove)
+  }
 }
 
+hero.addEventListener('click', toggleMouse)
 hero.addEventListener('mousemove', shadowMove)
 </script>
 
