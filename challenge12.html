@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<style>
+  body {
+    text-align: center;
+    background: #540452;
+    color: white;
+    font-family: 'helvetica neue', sans-serif;
+    font-weight: 100;
+    font-size: 45px;
+  }
+
+  a {
+    color:#936eb5;
+  }
+
+  a:hover {
+    color: #BADA55;
+  }
+
+  span {
+    color: #BADA55;
+  }
+
+  img {
+    width: 50%;
+  }
+</style>
+  <H1>WHAT'S THE MAGIC CODE??</H1>
+  <audio src="12-konami-codes/betty-laughing.mp3"></audio>
+<script type="text/javascript" src="12-konami-codes/karafy.js"></script>
+<script>
+  const keysPressed = [];
+  const secretCode = 'karafy';
+  const title = document.querySelector('h1');
+
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key); // shows the key pressed
+    keysPressed.push(e.key); //adds key to array
+    keysPressed.splice(-secretCode.length -1, keysPressed.length - secretCode.length) // starts from end, to end of length of secret code
+    console.log(keysPressed); //shows collection of keys pressed
+    if (keysPressed.join('').includes(secretCode)) {
+      console.log("BOOP! YOU GOT KARAFIED")
+      // cornify_add()
+      karafy()
+      title.innerHTML = 'KARAFY!!'
+    } else if (keysPressed[keysPressed.length - 1] == 'Escape') {
+      window.location.reload();
+    }
+  })
+
+</script>
+</body>
+</html>
