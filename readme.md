@@ -54,6 +54,7 @@ My solutions for all 30 [Javascript30](https://javascript30.com/) challenges for
 
 ### Day O8 - [Rainbow Canvas](challenge8.html)
 #### Things I learned:
+This challenge was so much fun!! I have a huge appreciation for apps like my beloved [picMonkey](https://picmonkey.com) now, for being able to give us all these options to edit images. I made a coloring page, and I can't wait to make a more intensive one!
 - HSL
 - Canvas object
 
@@ -77,6 +78,7 @@ I'm becoming more used to the flow of working on Javascript in that the main ste
 ### Day 12 - [Konami Code](challenge12.html)
 #### Things I learned:
 - *cornify!* I let myself go down a mini rabbit hole, to find hoffify and sharkify, and I am determined to make my own kara-fy! for my bitmoji avatar.
+IT'S DONE!!! check it OUT! PS: the secret code is karafy
 
 ### Day 13 - [Scroll](challenge13.html)
 #### Things I learned:
