@@ -32,7 +32,6 @@ const kcPics = [
 "https://render.bitstrips.com/render/9419230/11800032_1-s1-v1.png?transparent=1",
 "https://render.bitstrips.com/render/9175281/11800032_1-s1-v1.png?transparent=1",
 "https://render.bitstrips.com/render/7548803/11800032_1-s1-v1.png?transparent=1",
-"https://render.bitstrips.com/render/9686055/11800032_1-s1-v1.png?transparent=1",
 "https://render.bitstrips.com/render/8770505/11800032_1-s1-v1.png?transparent=1",
 "https://render.bitstrips.com/render/10185496/11800032_1-s1-v1.png?transparent=1",
 "https://render.bitstrips.com/render/8709434/11800032_1-s1-v1.png?transparent=1",
