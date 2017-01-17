@@ -165,7 +165,7 @@ function karafy_updateCount() {
     p.style.color = '#009688';
     p.style.textAlign = 'center';
     p.style.fontSize = '24px';
-    p.style.fontFamily = "cursive";
+    p.style.fontFamily = 'Comfortaa';
     const body = document.getElementsByTagName('body')[0];
     body.appendChild(p);
   }
