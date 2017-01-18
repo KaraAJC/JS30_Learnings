@@ -20,12 +20,12 @@
       padding-left: 20px;
 
     }
+
      h1 {
       font-size: 5em;
      }
 
     #bands {
-      list-style: inside square;
       font-size: 20px;
       background: rgba(255, 255, 255, 0.75);
       width: 500px;
@@ -39,6 +39,11 @@
     #bands li {
       border-bottom: 1px solid #efefef;
       padding: 20px;
+    }
+
+    #bands img {
+      vertical-align: middle;
+      padding-right: 20px;
     }
 
     #bands li:last-child {
@@ -60,38 +65,71 @@
   <ul id="bands"></ul>
 
   <script>
-  const bands = ['Jaguares', 'Hamaschefot', 'The Beatles', 'The Deaftones', 'Rage Against the Machine', 'Earth Wind & Fire', 'The Mamas & The Papas', 'The Cranberries', 'Audioslave', 'The Flobots', 'System of A Down', 'The Commodores', 'Muse', "Mashrou' Leila", "Kittie", "Girl in a Coma", "I Fight Dragons", "Weezer", "Queen", "Aqualung", "Ladytron", "Postal Service", "Metric"];
+// "Jaguares", "Hamaschefot", "The Beatles", "The Deaftones", "Rage Against the Machine", "Earth Wind & Fire", "The Mamas & The Papas", "The Cranberries", "Audioslave", "The Flobots", "System of A Down", "The Commodores", "Muse", "Mashrou' Leila", "Kittie", "Girl in a Coma", "I Fight Dragons", "Weezer", "Queen", "Aqualung",
+    const bands = [ "Ladytron", "Postal Service", "Metric"];
+      let bandPics = [];
 
-// My first try consisted of mapping the band list, then splitting the names, then I was going to do a huge if statement around the articles, but I knew I was going in the wrong direction.
+    function getArtistInfo(band) {
+      let apiUrl = "http://ws.audioscrobbler.com/2.0/?";
+      let artistUrl = `${apiUrl}method=artist.getinfo&artist=${encodeURI(band)}&autocorrect=1&api_key=67daf433287bbfb59da45ea26727d727&format=json`;
+      console.log(`fetching ${band} using ${artistUrl}`);
 
-//   articleStrippedBands = bands.map(band => {
-//   band.split(' ').
-//     if(this.includes('The')){
-//       console.log("has The in the name")
-//       this.pop()
-//     }
-// })
+      fetch(artistUrl)
+        .then(prom => prom.json()) // we take the promise and convert to json readable
+        .then((data, frozenBandPics) =>  {
+          let frozenBandPics = []
+          console.log(bandPics);
+          if (data.artist.image[1]["#text"]) {
+            let pic = data.artist.image[1]["#text"];
+            frozenBandPics.push(pic);
+            // console.log(bandPics);
+            return bandPics;
+          } else {
+            // bandPics.push("https://source.unsplash.com/brsK3C6XpxM/64/64/?blur");
+            // return bandPics;
+          };
+          // console.log(bandPics);
+          // return bandPics;
+        }, (frozenBandPics));
+        // {
+        //   let artistPic = data.artist.image[1];
+        //   return artistPic;
+        // });
+    // console.log(`the bandPic is here: ${bandPic}`);
+    };
 
-function strip(bandName) {
-  return bandName.replace(/^(a |the |an )/i, '').trim();
-}
+    console.log("here's the pics: " + bandPics);
+    // My first try consisted of mapping the band list, then splitting the names, then I was going to do a huge if statement around the articles, but I knew I was going in the wrong direction.
 
-const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
-  // refactored from below to use Ternerary
-  // if(strip(a) > strip(b)) {
-  //   return 1;
-  // } else {
-  //   return -1;
-  // }
+    //   articleStrippedBands = bands.map(band => {
+    //   band.split(' ').
+    //     if(this.includes('The')){
+    //       console.log("has The in the name")
+    //       this.pop()
+    //     }
+    // })
 
-  //refactored AGAIN to use Arrow function and implicit return, removing function text and {} brackets, AND return text.
+    function strip(bandName) {
+      return bandName.replace(/^(a |the |an )/i, '').trim();
+    }
 
-  document.querySelector('#bands').innerHTML =
-  sortedBands
-    .map(band => `<li>${band}</li>`)
-    //calling toString on array, leaving commas unless you use .join
-    .join('');
+    const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+    // refactored from below to use Ternerary
+    // if(strip(a) > strip(b)) {
+    //   return 1;
+    // } else {
+    //   return -1;
+    // }
 
+    //refactored AGAIN to use Arrow function and implicit return, removing function text and {} brackets, AND return text.
+
+    document.querySelector('#bands').innerHTML =
+    sortedBands
+      .map((band, i) => {
+        getArtistInfo(band);
+        return `<li><img src="${bandPics[i]}">  ${band}</li>`})
+      //calling toString on array, leaving commas unless you use .join
+      .join('');
   </script>
 </body>
 </html>
