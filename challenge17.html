@@ -2,28 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF=8">
-  <title>Bands Sorted</title>
+  <title>Sort My Fave Bands</title>
 </head>
 <body>
 
-  <style >
+  <style>
     body {
       font-family: sans-serif;
-      background: url("https://source.unsplash.com/brsK3C6XpxM/2000x2000");
+      background: url("https://source.unsplash.com/brsK3C6XpxM/2-0x1000");
       background-size: cover;
       display: flex;
-      align-items: center;
       min-height: 100vh;
     }
+
+    .title {
+      color: white;
+      padding-left: 20px;
+
+    }
+     h1 {
+      font-size: 5em;
+     }
 
     #bands {
       list-style: inside square;
       font-size: 20px;
-      background: white;
+      background: rgba(255, 255, 255, 0.75);
       width: 500px;
       margin: auto;
       padding: 0;
       box-shadow: 0 0 0 20px rgba(0,0,0,0.5);
+      max-height: 500px;
+      overflow-y: scroll;
     }
 
     #bands li {
@@ -42,10 +52,46 @@
 
   </style>
 
+  <div class="title">
+    <h1>Kara's <br/>Favorite <br/>Bands</h1>
+    <h2>Sorted, Alphabetically</h2>
+  </div>
+
   <ul id="bands"></ul>
 
   <script>
-  const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+  const bands = ['Jaguares', 'Hamaschefot', 'The Beatles', 'The Deaftones', 'Rage Against the Machine', 'Earth Wind & Fire', 'The Mamas & The Papas', 'The Cranberries', 'Audioslave', 'The Flobots', 'System of A Down', 'The Commodores', 'Muse', "Mashrou' Leila", "Kittie", "Girl in a Coma", "I Fight Dragons", "Weezer", "Queen", "Aqualung", "Ladytron", "Postal Service", "Metric"];
+
+// My first try consisted of mapping the band list, then splitting the names, then I was going to do a huge if statement around the articles, but I knew I was going in the wrong direction.
+
+//   articleStrippedBands = bands.map(band => {
+//   band.split(' ').
+//     if(this.includes('The')){
+//       console.log("has The in the name")
+//       this.pop()
+//     }
+// })
+
+function strip(bandName) {
+  return bandName.replace(/^(a |the |an )/i, '').trim();
+}
+
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+  // refactored from below to use Ternerary
+  // if(strip(a) > strip(b)) {
+  //   return 1;
+  // } else {
+  //   return -1;
+  // }
+
+  //refactored AGAIN to use Arrow function and implicit return, removing function text and {} brackets, AND return text.
+
+  document.querySelector('#bands').innerHTML =
+  sortedBands
+    .map(band => `<li>${band}</li>`)
+    //calling toString on array, leaving commas unless you use .join
+    .join('');
+
   </script>
 </body>
 </html>
